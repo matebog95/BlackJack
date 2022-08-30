@@ -1,24 +1,32 @@
 let firstCard = Math.floor((Math.random()*11)+2);
 let secondCard = Math.floor((Math.random()*11)+2);
-let thirdCard = Math.floor((Math.random()*11)+2);
+let newCard = Math.floor((Math.random()*11)+2);
+let newCard2 = Math.floor((Math.random()*11)+2);
+let infoID = document.getElementById("info");
+let CardsID = document.getElementById("Cards");
+let sumID = document.getElementById("Suma");
 
-// Set their values to a random number between 2-11
-// 2. Create a variable, sum, and set it to the sum of the two cards
 let sum = firstCard + secondCard;
 
+function startGame(){
+
+    CardsID.textContent = "Cards: " + firstCard + " " + secondCard;
+    sumID.textContent = "Sum: "+ sum;
+
+
 if( sum < 21){
-    
-    console.log("Do you want drew a new card?")
-    sum =+ thirdCard;
 
-} else if ( sum === 21)
+    infoID.textContent="Do you want drew a new card?";
+    sum = sum + newCard;
+
+}
+else if ( sum === 21)
 {
-    console.log("You WIN!!!")
-    
-
+    infoID.textContent="You WIN!!!";
 }
 else{
-        console.log("You LOST!!!")
+    infoID.textContent="You LOST!!!";
+
+}
 }
 
-console.log(sum);

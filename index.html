@@ -2,10 +2,32 @@
 <html>
     <head>
         <link rel="stylesheet" href="index.css">
-        <script src="index.js"></script>
+
     </head>
-    <body>
-        <title> Blackjack </title>
-        <h1 class = GameName> Blackjack</h1>
+    <body >
+        <div class = Background>
+        
+            <title> Blackjack </title>
+       
+            <h1 class = SectionTitle > Blackjack</h1>
+        
+            <section class = Information > 
+                 <p id ="info">Hello in Blackjack Game</p>
+            </section>
+        
+            <section class = CardsInformation > 
+                 <p id ="Cards">Cards: </p>
+            </section>
+            </section class = buttonSection>
+                <button class = buttonGame onclick="startGame()"> Start Game</button>
+                <button class = buttonGame onclick="newCard()"> New Card</button>
+            </section>
+            <section class = sumCard>
+                <p></p>
+                <p id ="Suma"> Sum: </p>
+            </section>
+
+        </div>
     </body>
+    <script src="index.js"></script>
 </html>
