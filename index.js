@@ -6,27 +6,53 @@ let infoID = document.getElementById("info");
 let CardsID = document.getElementById("Cards");
 let sumID = document.getElementById("Suma");
 
+const btn = document.getElementById('btn');
+
+btn.addEventListener('click', function handleClick() {
+  btn.innerHTML = 'New Game';
+});
+
 let sum = firstCard + secondCard;
 
-function startGame(){
+function startGameButton(){
 
-    CardsID.textContent = "Cards: " + firstCard + " " + secondCard;
-    sumID.textContent = "Sum: "+ sum;
+    CardsID.innerHTML= "Cards: " + firstCard + " " + secondCard;
+    sumID.innerHTML = "Sum: "+ sum;
+   
+    if( sum < 21){
 
+        infoID.textContent="Do you want drew a new card?";
+    }
+    
+    else if ( sum === 21)
+    {
+        infoID.textContent="You WIN!!!";
+    }
+    else{
+        infoID.textContent="You LOST!!!";
+    
+    } 
+}
+function DrewCardButton(){
 
-if( sum < 21){
-
-    infoID.textContent="Do you want drew a new card?";
+    CardsID.innerHTML= "Cards: " + firstCard + " " + secondCard + " " + newCard
     sum = sum + newCard;
+    
+    sumID.innerHTML = "Sum: "+ sum ;
+   
+    if( sum < 21){
 
-}
-else if ( sum === 21)
-{
-    infoID.textContent="You WIN!!!";
-}
-else{
-    infoID.textContent="You LOST!!!";
-
-}
+        infoID.textContent="Do you want drew a new card?";
+        
+     }
+    
+    else if ( sum === 21)
+    {
+        infoID.textContent="You WIN!!!";
+    }
+    else{
+        infoID.textContent="You LOST!!!";
+    
+    } 
 }
 
